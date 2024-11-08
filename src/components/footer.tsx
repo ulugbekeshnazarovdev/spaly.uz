@@ -146,7 +146,7 @@ export function FooterComponent() {
               className="space-y-4 w-full md:w-auto"
             >
               <h3 className="text-sm text-zinc-500 mb-4">Доступно в:</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
                 <motion.a
                   href="https://googleplay.com"
                   whileHover={{ scale: 1.05 }}
