@@ -158,6 +158,7 @@ export function FooterComponent() {
                     alt="Google Play"
                     width={120}
                     height={40}
+                    className="w-full h-auto"
                   />
                 </motion.a>
                 <motion.a
@@ -171,6 +172,7 @@ export function FooterComponent() {
                     alt="App Store"
                     width={120}
                     height={40}
+                    className="w-full h-auto"
                   />
                 </motion.a>
                 <motion.a
@@ -184,6 +186,7 @@ export function FooterComponent() {
                     alt="App Gallery"
                     width={120}
                     height={40}
+                    className="w-full h-auto"
                   />
                 </motion.a>
                 <motion.a href="#" whileHover={{ scale: 1.05 }}>
