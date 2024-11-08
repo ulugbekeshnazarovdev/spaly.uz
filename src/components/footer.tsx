@@ -9,6 +9,7 @@ import Google from "../../public/google.svg";
 import AppStore from "../../public/apple.svg";
 import AppGalery from "../../public/app-galery.svg";
 import SmartTv from "../../public/smarttv.svg";
+
 export function FooterComponent() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -44,10 +45,13 @@ export function FooterComponent() {
         animate="visible"
         variants={containerVariants}
       >
-        <div className="">
+        <div className="space-y-12 md:space-y-0">
           {/* Logo and Description */}
-          <div className="flex items-center justify-between h-[168px] flex-col md:flex-row mb-6">
-            <motion.div variants={itemVariants} className=" w-[760px] px-4">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:h-[168px] mb-6 space-y-6 md:space-y-0">
+            <motion.div
+              variants={itemVariants}
+              className="w-full md:w-[760px] px-4"
+            >
               <Image
                 src={logoSplay}
                 alt="S-PLAY"
@@ -65,13 +69,12 @@ export function FooterComponent() {
             {/* Contact Info */}
             <motion.div
               variants={itemVariants}
-              className="p-2 grid grid-cols-1 md:grid-cols-2 gap-4"
+              className="p-2 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full md:w-auto"
             >
               <div className="border p-2 border-zinc-500/20 rounded-xl">
                 <h3 className="text-zinc-500 text-sm mb-2">Телефон:</h3>
                 <p className="text-white">+998 (78) 200 59 95</p>
               </div>
-
               <div className="border p-2 border-zinc-500/20 rounded-xl">
                 <h3 className="text-zinc-500 text-sm mb-2">Telegram bot:</h3>
                 <p className="text-white">splaysupport_bot</p>
@@ -88,8 +91,11 @@ export function FooterComponent() {
               </div>
             </motion.div>
           </div>
-          <div className="flex items-center justify-between flex-col md:flex-row mb-6 gap-4  h-[168px]">
-            <motion.div variants={itemVariants} className="space-y-4">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:h-[168px] space-y-6 md:space-y-0">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-4 w-full md:w-auto"
+            >
               <h3 className="text-sm text-zinc-500 mb-4">
                 Мы в социальных сетях:
               </h3>
@@ -99,42 +105,53 @@ export function FooterComponent() {
                   whileHover={iconHover}
                   className="bg-zinc-900 p-3 rounded-full"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FaInstagram className="w-5 h-5" />
+                  <span className="sr-only">Instagram</span>
                 </motion.a>
                 <motion.a
                   href="https://web.telegram.com"
                   whileHover={iconHover}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-zinc-900 p-3 rounded-full"
                 >
                   <FaTelegram className="w-5 h-5" />
+                  <span className="sr-only">Telegram</span>
                 </motion.a>
                 <motion.a
                   href="https://facebook.com/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={iconHover}
                   className="bg-zinc-900 p-3 rounded-full"
                 >
                   <FaFacebook className="w-5 h-5" />
+                  <span className="sr-only">Facebook</span>
                 </motion.a>
                 <motion.button
                   onClick={scrollToTop}
                   whileHover={iconHover}
                   className="bg-zinc-900 p-3 rounded-full"
+                  aria-label="Scroll to top"
                 >
                   <FaArrowUp className="w-5 h-5" />
                 </motion.button>
               </div>
             </motion.div>
             {/* App Store Links */}
-            <motion.div variants={itemVariants} className="space-y-4">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-4 w-full md:w-auto"
+            >
               <h3 className="text-sm text-zinc-500 mb-4">Доступно в:</h3>
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 <motion.a
                   href="https://googleplay.com"
                   whileHover={{ scale: 1.05 }}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Image
                     src={Google}
@@ -147,6 +164,7 @@ export function FooterComponent() {
                   href="https://app-store.com"
                   whileHover={{ scale: 1.05 }}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Image
                     src={AppStore}
@@ -159,6 +177,7 @@ export function FooterComponent() {
                   href="https://appgallery.huawei.com/Featured"
                   whileHover={{ scale: 1.05 }}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Image
                     src={AppGalery}
@@ -167,7 +186,7 @@ export function FooterComponent() {
                     height={40}
                   />
                 </motion.a>
-                <motion.a href="#" whileHover={{ scale: 1.05 }} target="_blank">
+                <motion.a href="#" whileHover={{ scale: 1.05 }}>
                   <Image src={SmartTv} alt="Smart TV" width={120} height={40} />
                 </motion.a>
               </div>
@@ -180,8 +199,8 @@ export function FooterComponent() {
           variants={itemVariants}
           className="border-t border-zinc-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-zinc-500"
         >
-          <p>© SPLAY 2020-2022. Все права защищены</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          <p className="mb-4 md:mb-0">© SPLAY 2020-2022. Все права защищены</p>
+          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
             <Link href="#" className="hover:text-white transition-colors">
               Смотреть на SPLAY
             </Link>
